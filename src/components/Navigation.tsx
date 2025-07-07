@@ -67,6 +67,13 @@ export default function Navigation() {
               O nas
             </a>
             <a
+              href="#pricing"
+              className="hover:text-gray-300 transition-colors"
+              onClick={(e) => scrollToSection(e, "pricing")}
+            >
+              Cennik
+            </a>
+            <a
               href="#contact"
               className="hover:text-gray-300 transition-colors"
               onClick={(e) => scrollToSection(e, "contact")}
