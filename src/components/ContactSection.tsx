@@ -48,49 +48,99 @@ export default function ContactSection() {
           </div>
 
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-            <h3 className="text-2xl font-bold mb-6">Umów wizytę</h3>
-            <div className="space-y-6">
+            <h3 className="text-2xl font-bold mb-6">
+              Umów wizytę lub zapytaj o cenę
+            </h3>
+            <form
+              className="space-y-6"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.target as HTMLFormElement;
+                const name =
+                  (
+                    form.elements.namedItem(
+                      "Imię i nazwisko"
+                    ) as HTMLInputElement
+                  )?.value || "";
+                const phone =
+                  (form.elements.namedItem("Telefon") as HTMLInputElement)
+                    ?.value || "";
+                const service =
+                  (form.elements.namedItem("Usługa") as HTMLSelectElement)
+                    ?.value || "";
+                const info =
+                  (
+                    form.elements.namedItem(
+                      "Dodatkowe informacje"
+                    ) as HTMLTextAreaElement
+                  )?.value || "";
+                const subject = encodeURIComponent("Umów wizytę w CareCentrum");
+                const bodyRaw = `Dzień dobry,\r\nChciałbym umówić wizytę.\r\n\r\nImię i nazwisko: ${name}\r\nTelefon: ${phone}\r\nUsługa: ${service}\r\nDodatkowe informacje: ${info}`;
+                const body = encodeURIComponent(
+                  bodyRaw.replace(/\r?\n/g, "\r\n")
+                );
+                window.location.href = `mailto:kontakt@carecentrum.pl?subject=${subject}&body=${body}`;
+              }}
+            >
               <div>
                 <input
+                  name="Imię i nazwisko"
                   type="text"
                   placeholder="Imię i nazwisko"
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40"
+                  required
                 />
               </div>
               <div>
                 <input
+                  name="Telefon"
                   type="tel"
                   placeholder="Telefon"
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40"
+                  required
                 />
               </div>
               <div>
-                <select className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-white/40">
-                  <option value="">Wybierz usługę</option>
-                  <option value="oklejanie">Oklejanie</option>
-                  <option value="odnawianie">Odnawianie</option>
-                  <option value="detailing">Detailing</option>
-                  <option value="powloka">Powłoka Ceramiczna</option>
+                <select
+                  name="Usługa"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-white/40"
+                  required
+                >
+                  <option className="bg-gray-800 text-white" value="">
+                    Wybierz usługę
+                  </option>
+                  <option className="bg-gray-800 text-white" value="oklejanie">
+                    Oklejanie
+                  </option>
+                  <option className="bg-gray-800 text-white" value="odnawianie">
+                    Odnawianie
+                  </option>
+                  <option className="bg-gray-800 text-white" value="detailing">
+                    Detailing
+                  </option>
+                  <option className="bg-gray-800 text-white" value="powloka">
+                    Powłoka Ceramiczna
+                  </option>
+                  <option className="bg-gray-800 text-white" value="inne">
+                    Inne
+                  </option>
                 </select>
               </div>
               <div>
                 <textarea
+                  name="Dodatkowe informacje"
                   placeholder="Dodatkowe informacje"
                   rows={4}
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/40"
                 />
               </div>
               <button
+                type="submit"
                 className="w-full bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
-                onClick={() =>
-                  alert(
-                    "Formularz został wysłany! Skontaktujemy się z Tobą wkrótce."
-                  )
-                }
               >
                 Wyślij zapytanie
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

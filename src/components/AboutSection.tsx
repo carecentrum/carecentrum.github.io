@@ -2,7 +2,10 @@ import { Car, CheckCircle, Clock, Shield, Sparkles, Star } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-black">
+    <section
+      id="about"
+      className="py-20 bg-gradient-to-b from-gray-900 to-black"
+    >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -19,7 +22,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 bg-black">
           <div className="text-center group">
             <div className="bg-gradient-to-r from-white/10 to-gray-600/10 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all">
               <div className="text-4xl font-bold text-white mb-2">2025</div>

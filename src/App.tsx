@@ -3,6 +3,7 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navigation from "./components/Navigation";
+import PriceSection from "./components/PriceSection";
 import ServicesSection from "./components/ServicesSection";
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Hero />
       <ServicesSection />
       <AboutSection />
+      <PriceSection />
       <ContactSection />
       <Footer />
     </div>
