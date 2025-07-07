@@ -1,0 +1,26 @@
+export default function CareCentrum({
+  className,
+  ...props
+}: React.SVGProps<SVGSVGElement> & { className?: string }) {
+  return (
+    <svg
+      width="219"
+      height="219"
+      viewBox="0 0 219 219"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      {...props}
+    >
+      <circle cx="109.5" cy="109.5" r="103" stroke="white" stroke-width="13" />
+      <path
+        d="M135 45C175.245 47.3947 207 75.2814 207 109.332C207 141.944 177.872 168.902 140.055 173.226C171.486 163.354 193.762 138.693 193.762 109.832C193.762 79.4463 169.07 53.7171 135 45Z"
+        fill="white"
+      />
+      <path
+        d="M84 46C43.7548 48.3947 12 76.2814 12 110.332C12 142.944 41.1278 169.902 78.9453 174.226C47.5145 164.354 25.2383 139.693 25.2383 110.832C25.2383 80.4463 49.9296 54.7171 84 46Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
