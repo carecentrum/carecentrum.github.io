@@ -1,4 +1,5 @@
-import { Car, CheckCircle, Shield, Sparkles } from "lucide-react";
+import { CheckCircle, Shield, Sparkles } from "lucide-react";
+import Motorcycle from "./svgs/Motorcycle";
 
 export default function ServicesSection() {
   const services = [
@@ -28,7 +29,7 @@ export default function ServicesSection() {
     {
       title: "Detailing",
       description: "Profesjonalne czyszczenie i pielęgnacja każdego elementu",
-      icon: Car,
+      icon: Motorcycle,
       features: [
         "Mycie dokładne",
         "Czyszczenie silnika",

@@ -1,4 +1,5 @@
-import { Car, CheckCircle, Shield, Sparkles, Star, Clock } from "lucide-react";
+import { CheckCircle, Clock, Shield, Sparkles, Star } from "lucide-react";
+import Motorcycle from "./svgs/Motorcycle";
 
 export default function PriceSection() {
   const scrollToSection = (id: string) => {
@@ -61,7 +62,7 @@ export default function PriceSection() {
     {
       title: "Detailing Basic",
       description: "Podstawowe czyszczenie i pielęgnacja",
-      icon: Car,
+      icon: Motorcycle,
       price: "Od 350 zł",
       duration: "4-6 godzin",
       popular: false,
