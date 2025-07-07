@@ -1,4 +1,5 @@
-import { Car, CheckCircle, Clock, Shield, Sparkles, Star } from "lucide-react";
+import { CheckCircle, Clock, Shield, Sparkles, Star } from "lucide-react";
+import Motorcycle from "./svgs/Motorcycle";
 
 export default function AboutSection() {
   return (
@@ -129,7 +130,7 @@ export default function AboutSection() {
               </div>
               <div className="flex items-start space-x-4">
                 <div className="bg-white/10 rounded-full p-2 mt-1">
-                  <Car className="h-5 w-5 text-white" />
+                  <Motorcycle className="h-5 w-5 text-white" />
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold mb-1">Passion</h4>
