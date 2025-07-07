@@ -195,7 +195,10 @@ export default function Footer() {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <div className="flex justify-start items-center gap-4 cursor-pointer text-white hover:text-gray-300 transition-all duration-300 group mb-6">
+              <div
+                onClick={scrollToTop}
+                className="flex justify-start items-center gap-4 cursor-pointer text-white hover:text-gray-300 transition-all duration-300 group mb-6"
+              >
                 <div className="relative">
                   <CareCentrum className="size-12 group-hover:scale-110 transition-transform duration-300" />
                   <div className="absolute inset-0 bg-white/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
