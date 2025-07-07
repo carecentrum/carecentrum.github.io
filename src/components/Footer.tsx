@@ -101,7 +101,7 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-gray-500 mb-1">Adres</p>
                   <a
-                    href="https://maps.app.goo.gl/9zcjwCtg8CoS4n9Y7"
+                    href="https://maps.app.goo.gl/D5pYMpYgGf2zvXH67"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white text-sm hover:text-gray-300 transition-colors"
@@ -274,7 +274,7 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Adres</p>
                   <a
-                    href="https://maps.app.goo.gl/9zcjwCtg8CoS4n9Y7"
+                    href="https://maps.app.goo.gl/D5pYMpYgGf2zvXH67"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-gray-300 transition-colors duration-300"
@@ -341,7 +341,7 @@ export default function Footer() {
 
               <button
                 onClick={scrollToTop}
-                className="bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all duration-300 group"
+                className="bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all duration-300 group cursor-pointer"
               >
                 <ArrowUp className="w-5 h-5 text-white group-hover:scale-110 transition-transform duration-300" />
               </button>
