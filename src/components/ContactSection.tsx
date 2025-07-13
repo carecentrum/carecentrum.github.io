@@ -30,7 +30,7 @@ export default function ContactSection() {
               <Phone className="h-8 w-8 text-white" />
               <div>
                 <h3 className="text-xl font-semibold mb-2">Telefon</h3>
-                <p className="text-gray-400">+48 123 456 789</p>
+                <p className="text-gray-400">+48 514 608 526</p>
               </div>
             </div>
 
@@ -41,7 +41,7 @@ export default function ContactSection() {
                 <p className="text-gray-400">
                   Pon-Pt: 8:00-18:00
                   <br />
-                  Sob: 9:00-15:00
+                  Sob: 10:00-14:00
                 </p>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function ContactSection() {
                 const body = encodeURIComponent(
                   bodyRaw.replace(/\r?\n/g, "\r\n")
                 );
-                window.location.href = `mailto:kontakt@carecentrum.pl?subject=${subject}&body=${body}`;
+                window.location.href = `mailto:m.szlosowski@motocyklicentrum.pl?subject=${subject}&body=${body}`;
               }}
             >
               <div>

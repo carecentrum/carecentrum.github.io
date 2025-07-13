@@ -16,7 +16,7 @@ export default function ServicesSection() {
       ],
     },
     {
-      title: "Odnawianie",
+      title: "Regeneracja",
       description: "Kompleksowe odnawianie i regeneracja lakieru motocykla",
       icon: Sparkles,
       features: [
@@ -31,22 +31,21 @@ export default function ServicesSection() {
       description: "Profesjonalne czyszczenie i pielęgnacja każdego elementu",
       icon: Motorcycle,
       features: [
-        "Mycie dokładne",
+        "Profesjonalne mycie",
         "Czyszczenie silnika",
         "Pielęgnacja skóry",
         "Konserwacja chromu",
       ],
     },
     {
-      title: "Powłoka Ceramiczna",
-      description:
-        "Najwyższej jakości powłoki ceramiczne dla długotrwałej ochrony",
+      title: "Nakładanie powłok",
+      description: "Najwyższej jakości powłoki dla długotrwałej ochrony",
       icon: CheckCircle,
       features: [
-        "Ochrona na lata",
-        "Hydrofobowość",
+        "Powłoki ceramiczne",
+        "Zabezpieczenie woskiem",
         "Łatwość mycia",
-        "Ochrona UV",
+        "Głęboki połysk i intensywna ochrona",
       ],
     },
   ];

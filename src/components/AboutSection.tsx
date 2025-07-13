@@ -44,8 +44,8 @@ export default function AboutSection() {
           </div>
           <div className="text-center group bg-black">
             <div className="bg-gradient-to-r from-white/10 to-gray-600/10 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all">
-              <div className="text-4xl font-bold text-white mb-2">24/7</div>
-              <div className="text-gray-400 mb-4">Konsultacje</div>
+              <div className="text-4xl font-bold text-white mb-2">10-18</div>
+              <div className="text-gray-400 mb-4">Konsultacje pn-pt</div>
               <p className="text-sm text-gray-500">
                 Jesteśmy dostępni dla naszych klientów
               </p>

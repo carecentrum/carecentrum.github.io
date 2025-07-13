@@ -119,10 +119,10 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-gray-500 mb-1">Telefon</p>
                   <a
-                    href="tel:+48123456789"
+                    href="tel:+48514608526"
                     className="text-white text-sm hover:text-gray-300 transition-colors"
                   >
-                    +48 123 456 789
+                    +48 514 608 526
                   </a>
                 </div>
               </div>
@@ -136,10 +136,10 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-gray-500 mb-1">Email</p>
                   <a
-                    href="mailto:CareCentrum@gmail.com"
+                    href="mailto:m.szlosowski@motocyklicentrum.pl"
                     className="text-white text-sm hover:text-gray-300 transition-colors"
                   >
-                    CareCentrum@gmail.com
+                    m.szlosowski@motocyklicentrum.pl
                   </a>
                 </div>
               </div>
@@ -293,10 +293,10 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Telefon</p>
                   <a
-                    href="tel:+48123456789"
+                    href="tel:+48514608526"
                     className="text-white hover:text-gray-300 transition-colors duration-300"
                   >
-                    +48 123 456 789
+                    +48 514 608 526
                   </a>
                 </div>
               </div>
@@ -308,10 +308,10 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Email</p>
                   <a
-                    href="mailto:CareCentrum@gmail.com"
+                    href="mailto:m.szlosowski@motocyklicentrum.pl"
                     className="text-white hover:text-gray-300 transition-colors duration-300"
                   >
-                    CareCentrum@gmail.com
+                    m.szlosowski@motocyklicentrum.pl
                   </a>
                 </div>
               </div>
