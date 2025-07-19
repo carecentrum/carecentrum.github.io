@@ -17,11 +17,11 @@ export default function RealizationCard({ item }: { item: Realization }) {
     <div className="group cursor-pointer flex flex-col h-full">
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br border border-white/10 hover:border-white/30 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-white/10 flex flex-col h-full">
         {/* Motorcycle image */}
-        <div className="aspect-[16/10] bg-gradient-to-br from-slate-700 to-slate-900 relative flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+        <div className="aspect-[16/10] relative flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
           <img
             src={item.image}
             alt={item.title}
-            className="object-cover w-full h-full max-h-56 sm:max-h-72 rounded-3xl"
+            className="object-cover w-full h-full max-h-56 sm:max-h-72 rounded-3xl group-hover:rounded-none transition-all duration-500"
             loading="lazy"
           />
 
@@ -50,8 +50,8 @@ export default function RealizationCard({ item }: { item: Realization }) {
 
           {/* Featured badge (moved to top-left) */}
           {item.featured && (
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-gradient-to-r from-blue-500 to-purple-500 text-xs font-bold px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow-lg">
-              WYRÓŻNIONE
+            <div className="text-sm font-medium cursor-vertical-text absolute top-4 left-4 sm:top-6 sm:left-6 bg-gradient-to-r from-green-600 to-teal-600 px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow-lg">
+              Wyróżnione
             </div>
           )}
         </div>
