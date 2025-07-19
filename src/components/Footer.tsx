@@ -8,13 +8,50 @@ import {
 } from "lucide-react";
 import CareCentrum from "./svgs/CareCentrum";
 import Kawasaki from "./svgs/Kawasaki";
+import { useRouter, useNavigate, Link } from "@tanstack/react-router";
+import React from "react";
 
 export default function Footer() {
+  const router = useRouter();
+  const navigate = useNavigate();
+
+  // Helper to scroll to section after navigation
+  const scrollToSectionById = (id: string) => {
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 0);
+  };
+
+  // Handles section navigation from any page
+  const handleSectionNav = async (
+    e: React.MouseEvent<HTMLAnchorElement | HTMLLIElement>,
+    id: string
+  ) => {
+    e.preventDefault();
+    if (router.state.location.pathname !== "/") {
+      await navigate({ to: "/" });
+      scrollToSectionById(id);
+    } else {
+      scrollToSectionById(id);
+    }
+  };
+
+  // Handles logo click from any page
+  const handleLogoClick = async () => {
+    if (router.state.location.pathname !== "/") {
+      await navigate({ to: "/" });
+      scrollToSectionById("home");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   const Logo = () => (
     <div
-      onClick={() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }}
+      onClick={handleLogoClick}
       className="py-4 flex justify-center items-center gap-4 cursor-pointer text-white hover:text-gray-300 transition-all duration-300 group"
     >
       <div className="relative">
@@ -27,17 +64,6 @@ export default function Footer() {
     </div>
   );
 
-  const scrollToSection = (
-    e: React.MouseEvent<HTMLAnchorElement | HTMLLIElement>,
-    id: string
-  ) => {
-    e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -48,6 +74,7 @@ export default function Footer() {
     { name: "O nas", id: "about" },
     { name: "Cennik", id: "pricing" },
     { name: "Kontakt", id: "contact" },
+    { name: "Galeria", id: "gallery", isRoute: true },
   ];
 
   const services = [
@@ -150,16 +177,26 @@ export default function Footer() {
           <div className="text-center mb-8">
             <h3 className="text-lg font-bold mb-4 text-white">Szybkie linki</h3>
             <div className="flex flex-wrap justify-center gap-2">
-              {quickLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={`#${link.id}`}
-                  onClick={(e) => scrollToSection(e, link.id)}
-                  className="px-4 py-2 bg-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/10"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {quickLinks.map((link, index) =>
+                link.isRoute ? (
+                  <Link
+                    key={index}
+                    to="/gallery"
+                    className="px-4 py-2 bg-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={index}
+                    href={`#${link.id}`}
+                    onClick={(e) => handleSectionNav(e, link.id)}
+                    className="px-4 py-2 bg-white/10 rounded-full text-sm text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                  >
+                    {link.name}
+                  </a>
+                )
+              )}
             </div>
           </div>
 
@@ -196,8 +233,8 @@ export default function Footer() {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div
-                onClick={scrollToTop}
-                className="flex justify-start items-center gap-4 cursor-pointer text-white hover:text-gray-300 transition-all duration-300 group mb-6"
+                onClick={handleLogoClick}
+                className="flex justify-start items-center gap-4 cursor-pointer text-white hover:text-gray-300 transition-colors duration-300 group mb-6"
               >
                 <div className="relative">
                   <CareCentrum className="size-12 group-hover:scale-110 transition-transform duration-300" />
@@ -230,18 +267,30 @@ export default function Footer() {
                 Szybkie linki
               </h3>
               <ul className="space-y-3">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={`#${link.id}`}
-                      onClick={(e) => scrollToSection(e, link.id)}
-                      className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
-                    >
-                      <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform translate-x-[-8px] group-hover:translate-x-0 transition-all duration-300" />
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
+                {quickLinks.map((link, index) =>
+                  link.isRoute ? (
+                    <li key={index}>
+                      <Link
+                        to="/gallery"
+                        className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
+                      >
+                        <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform translate-x-[-8px] group-hover:translate-x-0 transition-all duration-300" />
+                        {link.name}
+                      </Link>
+                    </li>
+                  ) : (
+                    <li key={index}>
+                      <a
+                        href={`#${link.id}`}
+                        onClick={(e) => handleSectionNav(e, link.id)}
+                        className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
+                      >
+                        <ChevronRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform translate-x-[-8px] group-hover:translate-x-0 transition-all duration-300" />
+                        {link.name}
+                      </a>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
 
@@ -254,7 +303,7 @@ export default function Footer() {
                 {services.map((service, index) => (
                   <li
                     onClick={(e) => {
-                      scrollToSection(e, "services");
+                      handleSectionNav(e, "services");
                     }}
                     key={index}
                     className="text-gray-400 hover:text-white transition-colors duration-300 cursor-pointer"
