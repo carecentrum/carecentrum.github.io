@@ -7,6 +7,7 @@ import {
   createRouter,
   createRoute,
   createRootRoute,
+  createHashHistory,
 } from "@tanstack/react-router";
 import RealizationsGallery from "./components/RealizationsGallery";
 import MainSections from "./components/MainSections.tsx";
@@ -31,6 +32,7 @@ const routeTree = rootRoute.addChildren([indexRoute, galleryRoute]);
 
 const router = createRouter({
   routeTree,
+  history: createHashHistory(),
   basepath: "/", // for GitHub Pages when repo name matches project name
 });
 
