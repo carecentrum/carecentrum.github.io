@@ -24,7 +24,7 @@ export default function AboutSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 ">
-          <div className="text-center group bg-black">
+          <div className="text-center group bg-black rounded-2xl">
             <div className="bg-gradient-to-r from-white/10 to-gray-600/10 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all">
               <div className="text-4xl font-bold text-white mb-2">2025</div>
               <div className="text-gray-400 mb-4">Rok założenia</div>
@@ -33,7 +33,7 @@ export default function AboutSection() {
               </p>
             </div>
           </div>
-          <div className="text-center group bg-black">
+          <div className="text-center group bg-black rounded-2xl">
             <div className="bg-gradient-to-r from-white/10 to-gray-600/10 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all">
               <div className="text-4xl font-bold text-white mb-2">100%</div>
               <div className="text-gray-400 mb-4">Najnowszy sprzęt</div>
@@ -42,7 +42,7 @@ export default function AboutSection() {
               </p>
             </div>
           </div>
-          <div className="text-center group bg-black">
+          <div className="text-center group bg-black rounded-2xl">
             <div className="bg-gradient-to-r from-white/10 to-gray-600/10 rounded-2xl p-8 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all">
               <div className="text-4xl font-bold text-white mb-2">10-18</div>
               <div className="text-gray-400 mb-4">Konsultacje pn-pt</div>
