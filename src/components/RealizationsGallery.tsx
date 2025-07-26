@@ -58,7 +58,7 @@ const realizations: Realization[] = [
   {
     id: "5",
     title: "Kawasaki ZX-6R",
-    year: 2020,
+    year: 2006,
     category: "Motocykl",
     type: "Supersport",
     price: "1 800 zł",
